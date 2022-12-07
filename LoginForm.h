@@ -1,10 +1,8 @@
 #pragma once
-#include <string.h>
-#include "User.h"
-#include "Client.h"
-#include "Personnel.h"
 
-namespace projetPOO {
+#include"RegisterForm.h"
+
+namespace ProjetPOO {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -15,7 +13,7 @@ namespace projetPOO {
 	using namespace System::Data::SqlClient;
 
 	/// <summary>
-	/// Description résumée de MyForm
+	/// Description résumée de LoginForm
 	/// </summary>
 	public ref class LoginForm : public System::Windows::Forms::Form
 	{
@@ -39,333 +37,276 @@ namespace projetPOO {
 				delete components;
 			}
 		}
-	
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ tbEmail;
-
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ tbMDP;
-
-	private: System::Windows::Forms::LinkLabel^ linkLabel1;
-	private: System::Windows::Forms::Button^ btnConnecter;
-
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ lbSeConnecter;
+	private: System::Windows::Forms::TextBox^ txtEmail;
+	private: System::Windows::Forms::TextBox^ txtMdp;
+	private: System::Windows::Forms::Label^ lbMdp;
+	private: System::Windows::Forms::Label^ lbEmail;
+	private: System::Windows::Forms::Button^ btnOK;
+	private: System::Windows::Forms::Label^ lbText;
+	private: System::Windows::Forms::LinkLabel^ llbCreerCompte;
+	private: System::Windows::Forms::SplitContainer^ splitContainer1;
+	private: System::Windows::Forms::SplitContainer^ splitContainer2;
 	private: System::Windows::Forms::CheckBox^ cbMdp;
 
-
-
-
-
-	protected:
-
-	protected:
-
 	private:
-		/// <summary>
-		/// Variable nécessaire au concepteur.
-		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->tbEmail = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->tbMDP = (gcnew System::Windows::Forms::TextBox());
-			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
-			this->btnConnecter = (gcnew System::Windows::Forms::Button());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->lbText = (gcnew System::Windows::Forms::Label());
+			this->llbCreerCompte = (gcnew System::Windows::Forms::LinkLabel());
+			this->btnOK = (gcnew System::Windows::Forms::Button());
+			this->lbSeConnecter = (gcnew System::Windows::Forms::Label());
+			this->txtEmail = (gcnew System::Windows::Forms::TextBox());
+			this->txtMdp = (gcnew System::Windows::Forms::TextBox());
+			this->lbMdp = (gcnew System::Windows::Forms::Label());
+			this->lbEmail = (gcnew System::Windows::Forms::Label());
+			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
+			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
 			this->cbMdp = (gcnew System::Windows::Forms::CheckBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
+			this->splitContainer1->Panel1->SuspendLayout();
+			this->splitContainer1->Panel2->SuspendLayout();
+			this->splitContainer1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer2))->BeginInit();
+			this->splitContainer2->Panel1->SuspendLayout();
+			this->splitContainer2->Panel2->SuspendLayout();
+			this->splitContainer2->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// label1
+			// lbText
 			// 
-			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbText->AutoSize = true;
+			this->lbText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(527, 70);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->MaximumSize = System::Drawing::Size(307, 59);
-			this->label1->MinimumSize = System::Drawing::Size(307, 59);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(307, 59);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Bienvenue";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->lbText->Location = System::Drawing::Point(20, 304);
+			this->lbText->Name = L"lbText";
+			this->lbText->Size = System::Drawing::Size(267, 16);
+			this->lbText->TabIndex = 22;
+			this->lbText->Text = L"Vous ne possèdez pas encore de compte \?";
 			// 
-			// label2
+			// llbCreerCompte
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->llbCreerCompte->AutoSize = true;
+			this->llbCreerCompte->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(529, 210);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(232, 41);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Adresse Mail";
+			this->llbCreerCompte->Location = System::Drawing::Point(20, 320);
+			this->llbCreerCompte->Name = L"llbCreerCompte";
+			this->llbCreerCompte->Size = System::Drawing::Size(123, 16);
+			this->llbCreerCompte->TabIndex = 21;
+			this->llbCreerCompte->TabStop = true;
+			this->llbCreerCompte->Text = L"Créez votre compte";
+			this->llbCreerCompte->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::llbCreerCompte_LinkClicked);
 			// 
-			// tbEmail
+			// btnOK
 			// 
-			this->tbEmail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnOK->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->btnOK->FlatAppearance->BorderSize = 0;
+			this->btnOK->Location = System::Drawing::Point(19, 252);
+			this->btnOK->Margin = System::Windows::Forms::Padding(4);
+			this->btnOK->Name = L"btnOK";
+			this->btnOK->Size = System::Drawing::Size(350, 46);
+			this->btnOK->TabIndex = 20;
+			this->btnOK->Text = L"SE CONNECTER";
+			this->btnOK->UseVisualStyleBackColor = false;
+			this->btnOK->Click += gcnew System::EventHandler(this, &LoginForm::btnOK_Click);
+			// 
+			// lbSeConnecter
+			// 
+			this->lbSeConnecter->AutoSize = true;
+			this->lbSeConnecter->Font = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbEmail->Location = System::Drawing::Point(537, 277);
-			this->tbEmail->Margin = System::Windows::Forms::Padding(4);
-			this->tbEmail->Name = L"tbEmail";
-			this->tbEmail->Size = System::Drawing::Size(295, 30);
-			this->tbEmail->TabIndex = 2;
-			this->tbEmail->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->lbSeConnecter->Location = System::Drawing::Point(10, 10);
+			this->lbSeConnecter->Name = L"lbSeConnecter";
+			this->lbSeConnecter->Size = System::Drawing::Size(178, 28);
+			this->lbSeConnecter->TabIndex = 15;
+			this->lbSeConnecter->Text = L"Se connecter";
 			// 
-			// label3
+			// txtEmail
 			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Verdana", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtEmail->Location = System::Drawing::Point(4, 4);
+			this->txtEmail->Margin = System::Windows::Forms::Padding(4);
+			this->txtEmail->Multiline = true;
+			this->txtEmail->Name = L"txtEmail";
+			this->txtEmail->Size = System::Drawing::Size(350, 40);
+			this->txtEmail->TabIndex = 17;
+			// 
+			// txtMdp
+			// 
+			this->txtMdp->Location = System::Drawing::Point(4, 4);
+			this->txtMdp->Margin = System::Windows::Forms::Padding(4);
+			this->txtMdp->Multiline = true;
+			this->txtMdp->Name = L"txtMdp";
+			this->txtMdp->PasswordChar = '*';
+			this->txtMdp->Size = System::Drawing::Size(350, 40);
+			this->txtMdp->TabIndex = 16;
+			// 
+			// lbMdp
+			// 
+			this->lbMdp->AutoSize = true;
+			this->lbMdp->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(529, 364);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(242, 41);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"Mot de Passe";
+			this->lbMdp->Location = System::Drawing::Point(3, 22);
+			this->lbMdp->Name = L"lbMdp";
+			this->lbMdp->Size = System::Drawing::Size(117, 18);
+			this->lbMdp->TabIndex = 14;
+			this->lbMdp->Text = L"Mot de passe";
 			// 
-			// tbMDP
+			// lbEmail
 			// 
-			this->tbMDP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbEmail->AutoSize = true;
+			this->lbEmail->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbMDP->Location = System::Drawing::Point(537, 421);
-			this->tbMDP->Margin = System::Windows::Forms::Padding(4);
-			this->tbMDP->Name = L"tbMDP";
-			this->tbMDP->Size = System::Drawing::Size(295, 30);
-			this->tbMDP->TabIndex = 4;
-			this->tbMDP->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->tbMDP->UseSystemPasswordChar = true;
+			this->lbEmail->Location = System::Drawing::Point(3, 22);
+			this->lbEmail->Name = L"lbEmail";
+			this->lbEmail->Size = System::Drawing::Size(59, 18);
+			this->lbEmail->TabIndex = 11;
+			this->lbEmail->Text = L"E-mail";
 			// 
-			// linkLabel1
+			// splitContainer1
 			// 
-			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->BackColor = System::Drawing::Color::Transparent;
-			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->linkLabel1->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->linkLabel1->Location = System::Drawing::Point(556, 590);
-			this->linkLabel1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(250, 23);
-			this->linkLabel1->TabIndex = 5;
-			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"je souhaite m\'enregistrer";
-			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::linkLabel1_LinkClicked);
+			this->splitContainer1->Location = System::Drawing::Point(15, 146);
+			this->splitContainer1->Name = L"splitContainer1";
+			this->splitContainer1->Orientation = System::Windows::Forms::Orientation::Horizontal;
 			// 
-			// btnConnecter
+			// splitContainer1.Panel1
 			// 
-			this->btnConnecter->BackColor = System::Drawing::Color::Transparent;
-			this->btnConnecter->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->btnConnecter->Font = (gcnew System::Drawing::Font(L"Verdana", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnConnecter->Location = System::Drawing::Point(583, 498);
-			this->btnConnecter->Margin = System::Windows::Forms::Padding(4);
-			this->btnConnecter->Name = L"btnConnecter";
-			this->btnConnecter->Size = System::Drawing::Size(193, 37);
-			this->btnConnecter->TabIndex = 6;
-			this->btnConnecter->Text = L"se connecter";
-			this->btnConnecter->UseVisualStyleBackColor = false;
-			this->btnConnecter->Click += gcnew System::EventHandler(this, &LoginForm::btnConnecter_Click);
+			this->splitContainer1->Panel1->Controls->Add(this->lbMdp);
 			// 
-			// pictureBox1
+			// splitContainer1.Panel2
 			// 
-			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox1->Location = System::Drawing::Point(945, 39);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(216, 186);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 7;
-			this->pictureBox1->TabStop = false;
+			this->splitContainer1->Panel2->Controls->Add(this->txtMdp);
+			this->splitContainer1->Size = System::Drawing::Size(361, 100);
+			this->splitContainer1->TabIndex = 24;
+			// 
+			// splitContainer2
+			// 
+			this->splitContainer2->Location = System::Drawing::Point(15, 41);
+			this->splitContainer2->Name = L"splitContainer2";
+			this->splitContainer2->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// splitContainer2.Panel1
+			// 
+			this->splitContainer2->Panel1->Controls->Add(this->lbEmail);
+			// 
+			// splitContainer2.Panel2
+			// 
+			this->splitContainer2->Panel2->Controls->Add(this->txtEmail);
+			this->splitContainer2->Size = System::Drawing::Size(361, 100);
+			this->splitContainer2->TabIndex = 26;
 			// 
 			// cbMdp
 			// 
 			this->cbMdp->AutoSize = true;
-			this->cbMdp->BackColor = System::Drawing::Color::Transparent;
-			this->cbMdp->Font = (gcnew System::Drawing::Font(L"Verdana", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->cbMdp->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->cbMdp->Location = System::Drawing::Point(607, 458);
+			this->cbMdp->Location = System::Drawing::Point(376, 217);
 			this->cbMdp->Name = L"cbMdp";
-			this->cbMdp->Size = System::Drawing::Size(147, 20);
-			this->cbMdp->TabIndex = 8;
-			this->cbMdp->Text = L"Voir mot de passe";
-			this->cbMdp->UseVisualStyleBackColor = false;
-			this->cbMdp->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbMdp_CheckedChanged_1);
+			this->cbMdp->Size = System::Drawing::Size(18, 17);
+			this->cbMdp->TabIndex = 17;
+			this->cbMdp->UseVisualStyleBackColor = true;
+			this->cbMdp->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbMdp_CheckedChanged);
 			// 
 			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1352, 752);
+			this->ClientSize = System::Drawing::Size(1902, 1033);
 			this->Controls->Add(this->cbMdp);
-			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->btnConnecter);
-			this->Controls->Add(this->linkLabel1);
-			this->Controls->Add(this->tbMDP);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->tbEmail);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
-			this->MaximumSize = System::Drawing::Size(1370, 799);
-			this->MinimumSize = System::Drawing::Size(1370, 799);
+			this->Controls->Add(this->splitContainer2);
+			this->Controls->Add(this->splitContainer1);
+			this->Controls->Add(this->lbText);
+			this->Controls->Add(this->llbCreerCompte);
+			this->Controls->Add(this->lbSeConnecter);
+			this->Controls->Add(this->btnOK);
 			this->Name = L"LoginForm";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"RSE : Login";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->Text = L"LoginForm";
+			this->splitContainer1->Panel1->ResumeLayout(false);
+			this->splitContainer1->Panel1->PerformLayout();
+			this->splitContainer1->Panel2->ResumeLayout(false);
+			this->splitContainer1->Panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
+			this->splitContainer1->ResumeLayout(false);
+			this->splitContainer2->Panel1->ResumeLayout(false);
+			this->splitContainer2->Panel1->PerformLayout();
+			this->splitContainer2->Panel2->ResumeLayout(false);
+			this->splitContainer2->Panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer2))->EndInit();
+			this->splitContainer2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
-			// LOAD FORM BEGINING
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
+	public: NS_Comp_Mappage::Personne^ prsn;
+
+	public: bool switchToCatalogue = false;
+	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////VERIFIE SI LES INFOS DANS LA BASE DE DONNEE PERSONNES/////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		String^ email = this->txtEmail->Text;
+		String^ mdp = this->txtMdp->Text;
+
+		String^ connString = "Data Source=LAPTOP-APUR1J6V\\MSSQLSERVER01;Initial Catalog=ProjetPOO;Integrated Security=True";
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+
+		String^ sqlQuery = "SELECT email_prsn,mdp_prsn FROM Personne WHERE email_prsn=@email AND mdp_prsn = @mdp;";
+		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@email", email);
+		command.Parameters->AddWithValue("@mdp", mdp);
+
+		SqlDataReader^ reader = command.ExecuteReader();
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////VERIFIE SI LES IFNOS NE SONT PAS VIDES///////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-	}
-			// On créer une personne
-	private : Personne^ prsn = nullptr;
-	private: int SwitchPersonne = 0;
-	public: int getSwitchPersonne() { return SwitchPersonne; }
-	private: int ID_RSE = 0;
-
-	public: int getID() { return this->ID_RSE; }
-
-	//public: int (*pointeurFonction)() = &getSwitchPersonne;
-
-	private: System::Void btnConnecter_Click(System::Object^ sender, System::EventArgs^ e) {
-		// BDD LINK
-		String^ connString = "Data Source=LAPTOP-SODGV426;Initial Catalog=BDD_POO_v5;Integrated Security=True";
-		
-		// Verifie si tb email et mdp sont empty
-		if (this->tbEmail->Text->Length == 0 || this->tbMDP->Text->Length < 5) {
-			MessageBox::Show("Veillez rentrer une adresse mail et un mot de passe valide."); MessageBoxButtons::OK;
+		if (email == "" || mdp == "")
+		{
+			MessageBox::Show("Adresse mail ou mot de passe vide", "Erreur", MessageBoxButtons::OK);
 			return;
 		}
-		try {
-			SqlConnection sqlConn(connString);
-			sqlConn.Open();
-			String^ sqlQuery =  "SELECT * FROM dbo.Personne WHERE email_prsn = '" + this->tbEmail->Text + "' AND mdp_prsn = '" + this->tbMDP->Text + "';";
-			String^ sqlQuery1 = "SELECT * FROM dbo.client WHERE email_prsn = '"   + this->tbEmail->Text + "' AND mdp_prsn = '" + this->tbMDP->Text + "';";
-			String^ sqlQuery2 = "SELECT * FROM dbo.personnel WHERE email_prsn = '"+ this->tbEmail->Text + "' AND mdp_prsn = '" + this->tbMDP->Text + "';";
-			// Cherche dans Personne
-			SqlCommand command(sqlQuery, % sqlConn);
-			SqlDataReader^ reader = command.ExecuteReader();
-			if (reader->Read()) {
-				sqlConn.Close();
-				prsn = gcnew Personne();
-				// Cherche dans Client
-				sqlConn.Open();
-				SqlCommand command(sqlQuery1, % sqlConn);
-				SqlDataReader^ reader1 = command.ExecuteReader();
-				if (reader1->Read()) {
-					prsn = gcnew Client();
-					// On ajoute les attributs à notre CLIENT
-					prsn->setId_prsn(reader1->GetInt32(0));
-					ID_RSE = reader1->GetInt32(0);
-					prsn->setID_client(reader1->GetInt32(1));
-					// IL MANQUE LA DATE <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
-					prsn->setNom(reader1->GetString(3));
-					prsn->setPrenom(reader1->GetString(4));
-					prsn->setEmail(reader1->GetString(5));
-					sqlConn.Close();
-					SwitchPersonne = 1;
-					delete prsn;
-					this->Close();
-				}
-				else {
-					sqlConn.Close();
-					sqlConn.Open();
-					SqlCommand command(sqlQuery2, % sqlConn);
-					SqlDataReader^ reader2 = command.ExecuteReader();
-					// Cherche si Personnel
-					if (reader2->Read()) {
-						prsn = gcnew Personnel();
-						prsn->setId_prsn(reader2->GetInt32(0));
-						prsn->setID_personnel(reader2->GetInt32(1));
-						prsn->setCode_secu(reader2->GetString(2));
-						// IL MANQUE LA DATE <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
-						prsn->setID_supp(reader2->GetInt32(4));
-						prsn->setAdmin(reader2->GetBoolean(5));
-						prsn->setNom(reader2->GetString(6));
-						prsn->setPrenom(reader2->GetString(7));
-						prsn->setEmail(reader2->GetString(8));
-						prsn->setID_adresse(reader2->GetInt32(10));
 
-						bool admin_ = reader2->GetBoolean(5);
-						if (prsn->getAdmin()) {
-							SwitchPersonne = 2;
-						}
-						else {
-							SwitchPersonne = 3;
-						}
-						delete prsn;
-						sqlConn.Close();
-						this->Close();
-					}
-				}
-			}
-			else {
-				sqlConn.Close();
-				MessageBox::Show("E-mail ou mot de passe incorrect."); MessageBoxButtons::OK;
-			}
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		if (reader->Read())
+		{
+			this->switchToCatalogue = true;
+			this->Close();
 		}
-		catch (Exception^ e) {
-			MessageBox::Show("Problème de connection à la BDD."); MessageBoxButtons::OK;
+		else
+		{
+			MessageBox::Show("Adresse mail ou mot de passe incorrect", "Erreur", MessageBoxButtons::OK);
+			return;
 		}
 	}
-		   // SWITCH TO REGISTER
-	private: bool switchToRegister = false;
-	public: bool getSwitchToRegister() {
-		return this->switchToRegister;
-	}
-	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		switchToRegister = true;
+	
+	public: bool switchToRegister = false;
+	private: System::Void llbCreerCompte_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e)
+	{
+		this->switchToRegister = true;
 		this->Close();
 	}
-private: System::Void cbMdp_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (!this->cbMdp->Checked)
+
+	private: System::Void cbMdp_CheckedChanged(System::Object^ sender, System::EventArgs^ e) 
 	{
-		this->tbMDP->UseSystemPasswordChar = true;
+		if (cbMdp->Checked)
+		{
+			txtMdp->UseSystemPasswordChar = true;
+		}
+		else
+		{
+			txtMdp->UseSystemPasswordChar = false;
+		}
 	}
-	else
-	{
-		this->tbMDP->UseSystemPasswordChar = false;
-	}
-}
-private: System::Void cbMdp_CheckedChanged_1(System::Object^ sender, System::EventArgs^ e) {
-	if  (!this->cbMdp->Checked){ this->tbMDP->UseSystemPasswordChar = true; }
-	else                       { this->tbMDP->UseSystemPasswordChar = false; }
-}
 };
 }
-

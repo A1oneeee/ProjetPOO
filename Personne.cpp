@@ -1,56 +1,24 @@
 #include "Personne.h"
 
-Personne::Personne() : ID_prsn(0), nom(""), prenom(""), email("") { }
+System::String^ NS_Comp_Mappage::Personne::SelectPersonne(void)
+{
+	return "SELECT [id_prsn], [nom_prsn], [prenom_prsn], [email_prsn], [mdp_prsn] FROM [ProjetPOO].[dbo].[Personne]";
+}
+System::String^ NS_Comp_Mappage::Personne::InsertPersonne(void)
+{
+	return "INSERT INTO [ProjetPOO].[dbo].[Personne] (nom_prsn,prenom_prsn,email_prsn,mdp_prsn) VALUES('" + this->nom_prsn + "','" + this->prenom_prsn + 
+		"','" + this->email_prsn + "','" + this->mdp_prsn + "') ;";
+}
 
-// -> SET / GET ID_prsn
-void Personne::setId_prsn(int tmpid) { this->ID_prsn = tmpid; }
-int Personne::getID_prsn() { return this->ID_prsn; }
+void NS_Comp_Mappage::Personne::setIdPersonne(int id_prsn) { this->id_prsn = id_prsn; };
+void NS_Comp_Mappage::Personne::setNomPersonne(System::String^ nom) { this->nom_prsn = nom; };
+void NS_Comp_Mappage::Personne::setPrenomPersonne(System::String^ prenom) { this->prenom_prsn = prenom; };
+void NS_Comp_Mappage::Personne::setEmailPersonne(System::String^ email) { this->email_prsn = email; };
+void NS_Comp_Mappage::Personne::setMdpPersonne(System::String^ mdp) { this->mdp_prsn = mdp; };
 
-// -> SET / GET nom
-void Personne::setNom(System::String^ tmpnom) { this->nom = tmpnom; }
-System::String^ Personne::getNom() { return this->nom; }
+int NS_Comp_Mappage::Personne::getIdPersonne(void) { return this->id_prsn; }
+System::String^ NS_Comp_Mappage::Personne::getNomPersonne(void) { return this->nom_prsn; }
+System::String^ NS_Comp_Mappage::Personne::getPrenomPersonne(void) { return this->prenom_prsn; }
+System::String^ NS_Comp_Mappage::Personne::getEmailPersonne(void) { return this->email_prsn; }
+System::String^ NS_Comp_Mappage::Personne::getMdpPersonne(void) { return this->mdp_prsn; }
 
-// -> SET / GET prenom
-void Personne::setPrenom(System::String^ tmpprenom) { this->prenom = tmpprenom; }
-System::String^ Personne::getPrenom() { return this->prenom; }
-
-// -> SET / GET email
-void Personne::setEmail(System::String^ tmpemail) { this->email = tmpemail; }
-System::String^ Personne::getEmail() { return this->email; }
-
-
-/////////////////////////// Méthodes classe Client ///////////////////////////
-// -> SET / GET ID_client
-void Personne::setID_client(int tmp) { }
-int Personne::getID_client() { return 0; }
-
-// -> SET / GET date_naissance
-void Personne::setDate_naissance(System::DateTime^ tmp) { }
-/*
-System::DateTime^ Personne::getDate_naissance() { return ; }
-*/
-
-/////////////////////////// Méthodes classe Personnel ///////////////////////////
-// -> SET / GET ID_personnel
-void Personne::setID_personnel(int tmp) { }
-int Personne::getID_personnel() { return 0; }
-
-// -> SET / GET code_secu
-void Personne::setCode_secu(System::String^) { }
-System::String^ Personne::getCode_secu() { return " "; }
-
-// -> SET / GET date_embauche
-void Personne::setDate_embauche(System::DateTime^ tmp){}
-//System::DateTime^ Personne::getDate_embauche() { return; };
-
-// -> SET / GET ID_supp
-void Personne::setID_supp(int tmp){ }
-int Personne::getID_supp() { return 0; }
-
-// -> SET / GET admin_
-void Personne::setAdmin(bool tmp){ }
-bool Personne::getAdmin() { return 0; }
-
-// -> SET / GET ID_adresse
-void Personne::setID_adresse(int tmp){ }
-int Personne::getID_adresse() { return 0; }

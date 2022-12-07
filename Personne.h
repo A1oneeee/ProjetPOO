@@ -1,44 +1,32 @@
 #pragma once
-ref class Personne
+
+namespace NS_Comp_Mappage
 {
-protected:
-	int ID_prsn;
-	System::String^ nom;
-	System::String^ prenom;
-	System::String^ email;
-public:
-	Personne();
-	virtual void setId_prsn(int);
-	virtual int getID_prsn();
-	virtual void setNom(System::String^);
-	virtual System::String^ getNom();
-	virtual void setPrenom(System::String^);
-	virtual System::String^ getPrenom();
-	virtual void setEmail(System::String^);
-	virtual System::String^ getEmail();
+	ref class Personne
+	{
+	protected:
+		System::String^ sSql;
 
-	// Client Méthodes
-	virtual int getID_client();
-	virtual void setID_client(int);
-	//virtual System::DateTime^ getDate_naissance();
-	virtual void setDate_naissance(System::DateTime^);
+		int id_prsn;
+		System::String^ nom_prsn;
+		System::String^ prenom_prsn;
+		System::String^ email_prsn;
+		System::String^ mdp_prsn;
 
-	// Personnel Méthodes
-	virtual void setID_personnel(int);
-	virtual int getID_personnel();
+	public:
+		System::String^ SelectPersonne(void);
+		System::String^ InsertPersonne(void);
+		void setIdPersonne(int);
+		void setNomPersonne(System::String^);
+		void setPrenomPersonne(System::String^);
+		void setEmailPersonne(System::String^);
+		void setMdpPersonne(System::String^);
 
-	virtual void setCode_secu(System::String^);
-	virtual System::String^ getCode_secu();
+		int getIdPersonne(void);
+		System::String^ getNomPersonne(void);
+		System::String^ getPrenomPersonne(void);
+		System::String^ getEmailPersonne(void);
+		System::String^ getMdpPersonne(void);
+	};
+}
 
-	virtual void setDate_embauche(System::DateTime^);
-	//virtual System::DateTime^ getDate_embauche();
-
-	virtual void setID_supp(int);
-	virtual int getID_supp();
-
-	virtual void setAdmin(bool);
-	virtual bool getAdmin();
-
-	virtual void setID_adresse(int);
-	virtual int getID_adresse();
-};
